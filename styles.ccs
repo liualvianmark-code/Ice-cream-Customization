@@ -47,6 +47,10 @@ h2, h3 {
     color: #ff6600; /* Orange headings */
 }
 
+.flavor-options, .container-options {
+    margin: 10px 0;
+}
+
 label {
     display: block;
     margin: 10px 0;
