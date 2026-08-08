@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Customization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ice Cream Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Select Your Scoops</h2>
+            <label for="scoops">Number of Scoops:</label>
+            <select id="scoops" onchange="updatePrice()">
+                <option value="1">1 Scoop</option>
+                <option value="2">2 Scoops</option>
+                <option value="3">3 Scoops</option>
+            </select>
+
+            <h3>Flavors:</h3>
+            <label><input type="checkbox" value="Vanilla" onchange="updatePrice()"> Vanilla</label>
+            <label><input type="checkbox" value="Chocolate" onchange="updatePrice()"> Chocolate</label>
+            <label><input type="checkbox" value="Strawberry" onchange="updatePrice()"> Strawberry</label>
+
+            <h2>Select Your Container</h2>
+            <label><input type="radio" name="container" value="Cone" onchange="updatePrice()"> Cone</label>
+            <label><input type="radio" name="container" value="Cup" onchange="updatePrice()"> Cup</label>
+
+            <h2>Your Ice Cream Creation</h2>
+            <div id="summary"></div>
+            <div id="price">Total Price: $0.00</div>
+            <button onclick="addToCart()">Add to Cart</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
