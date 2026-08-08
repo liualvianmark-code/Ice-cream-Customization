@@ -1,79 +1,32 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff; /* Light blue background */
-    color: #333;
-    margin: 0;
-    padding: 0;
+let pricePerScoop = 2.00; // Price per scoop
+let conePrice = 0.50; // Price for cone
+let cupPrice = 0.00; // Price for cup
+
+function updatePrice() {
+    let scoops = document.getElementById("scoops").value;
+    let flavors = document.querySelectorAll('input[type="checkbox"]:checked');
+    let container = document.querySelector('input[name="container"]:checked');
+
+    let totalPrice = 0;
+
+    // Calculate price based on scoops
+    totalPrice += scoops * pricePerScoop;
+
+    // Add container price
+    if (container) {
+        totalPrice += container.value === "Cone" ? conePrice : cupPrice;
+    }
+
+    // Update summary
+    let selectedFlavors = Array.from(flavors).map(flavor => flavor.value).join(", ");
+    document.getElementById("summary").innerText = `Scoops: ${scoops}, Flavors: ${selectedFlavors}, Container: ${container ? container.value : 'None'}`;
+    
+    // Update price display
+    document.getElementById("price").innerText = `Total Price: $${totalPrice.toFixed(2)}`;
 }
 
-header {
-    background-color: #ffcc00; /* Yellow header */
-    padding: 20px;
-    text-align: center;
-    border-bottom: 5px solid #ff6600; /* Orange border */
+function addToCart() {
+    alert("Your ice cream has been added to the cart!");
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-h1 {
-    margin: 0;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2, h3 {
-    color: #ff6600; /* Orange headings */
-}
-
-label {
-    display: block;
-    margin: 10px 0;
-}
-
-button {
-    background-color: #ff6600; /* Orange button */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #e65c00; /* Darker orange on hover */
-}
-
-#summary {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9; /* Light gray background for summary */
-}
-
-#price {
-    font-weight: bold;
-    margin-top: 10px;
-}
