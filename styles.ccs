@@ -47,8 +47,8 @@ h2, h3 {
     color: #ff6600; /* Orange headings */
 }
 
-.flavor-options, .container-options {
-    margin: 10px 0;
+.customization {
+    margin: 20px 0;
 }
 
 label {
