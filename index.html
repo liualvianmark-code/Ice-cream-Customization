@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Ice Cream Shop</h1>
+        <h1>Welcome to the Ice Cream Shop!</h1>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -21,28 +21,30 @@
 
     <main>
         <section>
-            <h2>Select Your Scoops</h2>
-            <label for="scoops">Number of Scoops:</label>
-            <select id="scoops" onchange="updatePrice()">
-                <option value="1">1 Scoop</option>
-                <option value="2">2 Scoops</option>
-                <option value="3">3 Scoops</option>
-            </select>
+            <h2>Create Your Ice Cream</h2>
+            <div class="customization">
+                <h3>Select Number of Scoops:</h3>
+                <select id="scoops" onchange="updatePrice()">
+                    <option value="1">1 Scoop</option>
+                    <option value="2">2 Scoops</option>
+                    <option value="3">3 Scoops</option>
+                </select>
+            </div>
 
-            <h3>Flavors:</h3>
-            <div class="flavor-options">
+            <div class="customization">
+                <h3>Choose Your Flavors:</h3>
                 <label><input type="checkbox" value="Vanilla" onchange="updatePrice()"> Vanilla ($2.00)</label>
                 <label><input type="checkbox" value="Chocolate" onchange="updatePrice()"> Chocolate ($2.00)</label>
                 <label><input type="checkbox" value="Strawberry" onchange="updatePrice()"> Strawberry ($2.00)</label>
+                <label><input type="checkbox" value="Mint" onchange="updatePrice()"> Mint ($2.00)</label>
             </div>
 
-            <h2>Select Your Container</h2>
-            <div class="container-options">
+            <div class="customization">
+                <h3>Select Your Container:</h3>
                 <label><input type="radio" name="container" value="Cone" onchange="updatePrice()"> Cone ($0.50)</label>
                 <label><input type="radio" name="container" value="Cup" onchange="updatePrice()"> Cup ($0.00)</label>
             </div>
 
-            <h2>Your Ice Cream Creation</h2>
             <div id="summary"></div>
             <div id="price">Total Price: $0.00</div>
             <button onclick="addToCart()">Add to Cart</button>
